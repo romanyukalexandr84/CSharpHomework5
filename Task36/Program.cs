@@ -1,24 +1,24 @@
-﻿int Quantity (int size)
+﻿int Sum (int size)
 {
 int[] array = new int [size];
 
 int i = 0;
-int count = 0;
+int total = 0;
 
 for (i = 0; i < size; i++)
 {
-    array[i] = new Random().Next (100, 1000);
+    array[i] = new Random().Next (-99, 100);
     Console.Write (array[i] + " ");
-    if (array[i] % 2 == 0)
+    if (i % 2 != 0)
     {
-        count = count + 1;
+        total = total + array[i];
     }
 }
 Console.WriteLine ();
-return count;
+return total;
 }
 
 Console.WriteLine ("Задайте размерность массива");
 int leng = Convert.ToInt32 (Console.ReadLine());
 
-Console.WriteLine ("Количество четных чисел в массиве = "+Quantity (leng));
+Console.WriteLine ("Сумма элементов, стоящих на нечётных позициях = "+Sum (leng));
