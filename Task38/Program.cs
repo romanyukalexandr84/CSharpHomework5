@@ -1,17 +1,18 @@
-﻿int Delta (int size)
+﻿double Delta (int size)
 {
-int[] array = new int [size];
+double[] array = new double [size];
 
 int i = 0;
+Random random = new Random();
 
 for (i = 0; i < size; i++)
 {
-    array[i] = new Random().Next (-99, 100);
+    array[i] = Math.Round(random.NextDouble()*100, 2);
     Console.Write (array[i] + " ");
 }
 
-int max = array[0];
-int min = array[0];
+double max = array[0];
+double min = array[0];
 
 for (i = 1; i < size; i++)
 {
